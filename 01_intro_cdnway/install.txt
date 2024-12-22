@@ -1,0 +1,66 @@
+Tailwind CLI:
+
+install nodeJS
+verify:
+node -v
+npm -v
+npm init -y
+
+//-D developer
+npm install -D tailwindcss
+npx tailwindcss init //creates tailwindconfigfile
+
+"./src/**/*.{html,js}"
+//current dir /folders/subfolders/with.{html/js}
+//assuming that you will write css in this html files
+
+package.json
+{
+  "name": "tailwind",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module", //add
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
+
+>Developer:Reload window
+
+create /src/first.html 
+create /src/input.css
+paste : 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+run command to genrate output css
+npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+gererates output.css in  /src/output.css
+PS C:\Users\bagew\Desktop\WebDev\Tailwind> npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+
+link the css file /src/first.html
+<link href="./output.css" rel="stylesheet">
+
+
+creating a new project: 
+PS C:\Users\bagew\Desktop\WebDev\Tailwind> npx tailwindcss -i ./src2/input.css -o ./src2/output.css --watch
+
+Rebuilding...
+
+Done in 484ms.
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src2/**/*.{html,js}"], //change
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};

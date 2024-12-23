@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src2/**/*.{html,js}"],
+  content: ["./02_loginV2/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "japan-street": "url('./IMG/Japan Street illustration.jpg')",
+      },
+    },
   },
   plugins: [],
 };
